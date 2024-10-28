@@ -9,6 +9,7 @@
 body {
     background-repeat: no-repeat;
     background-position: center;
+    background-image: cover;
     height: 100vh;
     display: flex;
     justify-content: center;
