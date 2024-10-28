@@ -4,6 +4,19 @@
     font-size: 1.2rem;
 }
 
+body {
+    background-image: url('pexels-solyartphotos-14825208.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    font-size: 18px;
+    overflow: hidden;
+}
+
 .temperature {
     font-size: 4rem;
     font-weight: bold;
