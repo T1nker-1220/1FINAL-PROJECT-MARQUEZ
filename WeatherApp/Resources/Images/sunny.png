@@ -1,0 +1,3 @@
+The contents of the file `/WeatherApp/WeatherApp/Resources/Images/sunny.png` should be the image file for the background image representing sunny/clear weather. 
+
+Since this is an image file, it doesn't contain any code. You can simply copy the image file `sunny.png` into the specified location `/WeatherApp/WeatherApp/Resources/Images/` in your project.

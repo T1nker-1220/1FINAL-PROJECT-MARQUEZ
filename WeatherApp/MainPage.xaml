@@ -1,0 +1,17 @@
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:WeatherApp"
+             x:Class="WeatherApp.MainPage">
+    <ContentPage.Content>
+        <StackLayout>
+            <!-- Add your UI elements here -->
+            <Label Text="Welcome to the Weather App!" HorizontalOptions="Center" VerticalOptions="Center" />
+
+            <!-- Add an Image control to display the background image -->
+            <Image Source="{Binding WeatherBackgroundImage}" Aspect="AspectFill" />
+
+            <!-- Add other UI elements as needed -->
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
