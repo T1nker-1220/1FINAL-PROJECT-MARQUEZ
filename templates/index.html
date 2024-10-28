@@ -19,13 +19,13 @@
 </head>
 <body style="
     {% if weather.condition == 'Rain' %}
-        background-image: url('{{ url_for('static', filename='rain.jpg') }}');
+        background-image: url('{{ url_for('static', filename='static/pexels-ryan-millier-1693965-3228675.jpg') }}');
     {% elif weather.condition == 'Clear' %}
-        background-image: url('{{ url_for('static', filename='sunny.jpg') }}');
+        background-image: url('{{ url_for('static', filename='static/pexels-brett-sayles-912364.jpg') }}');
     {% elif weather.condition == 'Fog' %}
-        background-image: url('{{ url_for('static', filename='foggy.jpg') }}');
+        background-image: url('{{ url_for('static', filename='static/pexels-eberhardgross-1287083.jpg') }}');
     {% else %}
-        background-image: url('{{ url_for('static', filename='default.jpg') }}');
+        background-image: url('{{ url_for('static', filename='static/pexels-solyartphotos-14825208.jpg') }}');
     {% endif %}
 ">
     <div class="weather-container">
