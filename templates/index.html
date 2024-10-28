@@ -5,8 +5,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rain Or Shine</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <style>
+        body {
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+        .weather-container {
+            text-align: center;
+            padding: 20px;
+        }
+    </style>
 </head>
-<body>
+<body style="
+    {% if weather.condition == 'Rain' %}
+        background-image: url('{{ url_for('static', filename='rain.jpg') }}');
+    {% elif weather.condition == 'Clear' %}
+        background-image: url('{{ url_for('static', filename='sunny.jpg') }}');
+    {% elif weather.condition == 'Fog' %}
+        background-image: url('{{ url_for('static', filename='foggy.jpg') }}');
+    {% else %}
+        background-image: url('{{ url_for('static', filename='default.jpg') }}');
+    {% endif %}
+">
     <div class="weather-container">
         <!-- Main Heading for Weather Info -->
         <h1>Weather Info</h1>

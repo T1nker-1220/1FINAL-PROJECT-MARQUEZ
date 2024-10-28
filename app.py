@@ -1,12 +1,17 @@
 import json
+import os
 from flask import Flask, render_template, request
 import requests
+from dotenv import load_dotenv
+
+# Load environment variables from .env file
+load_dotenv()
 
 # Initialize the Flask application
 app = Flask(__name__, template_folder='templates')
 
-# Your OpenWeatherMap API key
-api_key = "50109a24ba32ed4b775a064f1fb11237"
+# Get the OpenWeatherMap API key from environment variables
+api_key = os.getenv('API_KEY')
 
 # List to store the cities
 cities = []
@@ -44,6 +49,7 @@ def get_weather(city):
             'temp': data.get('main', {}).get('temp', 'No temperature data available'),
             'humidity': data.get('main', {}).get('humidity', 'No humidity data available'),
             'description': data.get('weather', [{}])[0].get('description', 'No weather description available'),
+            'condition': data.get('weather', [{}])[0].get('main', 'No weather condition available')
         }
 
         # Print the JSON response for debugging (optional)
