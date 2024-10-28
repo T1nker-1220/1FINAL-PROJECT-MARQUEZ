@@ -7,9 +7,6 @@
 }
 
 body {
-    background-image: url('/images/pexels-solyartphotos-14825208.jpg');
-    background-size: cover;
-    background-position: center;
     height: 100vh;
     display: flex;
     justify-content: center;
