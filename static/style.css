@@ -25,6 +25,7 @@ body {
     padding: 40px;
     border-radius: 15px;
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+    -webkit-backdrop-filter: blur(15px); /* Stronger blur effect for Safari */
     backdrop-filter: blur(15px); /* Stronger blur effect */
     max-width: 450px;
     text-align: center;
