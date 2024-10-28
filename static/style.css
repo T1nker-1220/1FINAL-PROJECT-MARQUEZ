@@ -7,7 +7,6 @@
 }
 
 body {
-    background-image: url('pexels-solyartphotos-14825208.jpg');
     background-size: cover;
     background-position: center;
     height: 100vh;
@@ -25,6 +24,7 @@ body {
     padding: 40px;
     border-radius: 15px;
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+    -webkit-backdrop-filter: blur(15px); /* Stronger blur effect for Safari */
     backdrop-filter: blur(15px); /* Stronger blur effect */
     max-width: 450px;
     text-align: center;
@@ -34,118 +34,86 @@ body {
 /* Weather Info Heading */
 .weather-container h1 {
     font-size: 2.5rem;
-    margin-bottom: 20px;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    color: #8be9fd; /* Light blue for the heading */
-    animation: pulse 2s infinite;
-}
-
-/* Weather Info Paragraphs */
-.weather-info p {
-    margin: 10px 0;
-    font-size: 1.2rem;
-}
-
-.temperature {
-    font-size: 4rem;
-    font-weight: bold;
-    margin: 20px 0;
-    background: linear-gradient(135deg, #34e89e, #0f3443); /* Green and blue gradient text */
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-    animation: bounceIn 2s ease-in-out;
-}
-
-/* Input and Submit Button Styles */
-.city-input {
-    font-size: 1.4rem; /* Larger city input field */
-    padding: 12px;
-    width: 100%;
-    border: 2px solid #1abc9c; /* Green border */
-    border-radius: 5px;
-    margin-bottom: 10px;
-    background-color: rgba(255, 255, 255, 0.1);
-    color: white;
-}
-
-.submit-button {
-    font-size: 1rem; /* Smaller submit button */
-    padding: 10px 20px;
-    background-color: #3498db; /* Blue button */
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-.submit-button:hover {
-    background-color: #2980b9; /* Darker blue on hover */
 }
 
 /* Weather Icon */
 .weather-icon {
-    width: 120px;
-    margin: 20px auto;
-    animation: float 3s ease-in-out infinite;
+    width: 100px;
+    height: 100px;
+    margin-bottom: 20px;
 }
 
-/* Message Style */
-.message {
-    font-style: italic;
-    font-size: 1.2rem;
-    color: #74b9ff; /* Light blue for the message */
+/* City Input */
+.city-input {
+    width: 80%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+/* Submit Button */
+.submit-button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #007BFF;
+    color: #fff;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.submit-button:hover {
+    background-color: #0056b3;
+}
+
+/* Weather Information */
+.weather-info {
+    margin-top: 20px;
+}
+
+.weather-info h2 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+.weather-info p {
+    margin: 5px 0;
+}
+
+/* Previously Searched Cities */
+.previous-cities {
+    margin-top: 30px;
+}
+
+.previous-cities h2 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.previous-cities ul {
+    list-style: none;
+    padding: 0;
+}
+
+.previous-cities li {
+    margin: 5px 0;
 }
 
 /* Footer */
 .footer {
+    margin-top: 30px;
     font-size: 0.9rem;
-    margin-top: 20px;
-    color: rgba(255, 255, 255, 0.7);
-    animation: fadeIn 2s ease-in-out;
+    color: #ccc;
 }
 
-/* Animations */
+/* Fade In Animation */
 @keyframes fadeIn {
-    0% {
-        opacity: 0;
-        transform: translateY(-20px);
-    }
-    100% {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-@keyframes bounceIn {
-    0% {
-        transform: scale(0.95);
+    from {
         opacity: 0;
     }
-    100% {
-        transform: scale(1);
+    to {
         opacity: 1;
-    }
-}
-
-@keyframes float {
-    0% {
-        transform: translateY(0);
-    }
-    50% {
-        transform: translateY(-10px);
-    }
-    100% {
-        transform: translateY(0);
-    }
-}
-
-@keyframes pulse {
-    0% {
-        text-shadow: 0 0 10px #8be9fd, 0 0 20px #34e89e, 0 0 30px #0f3443;
-    }
-    100% {
-        text-shadow: 0 0 10px #34e89e, 0 0 20px #0f3443, 0 0 30px #8be9fd;
     }
 }

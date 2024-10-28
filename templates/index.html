@@ -7,7 +7,6 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
     <style>
         body {
-            background-size: cover;
             background-repeat: no-repeat;
             background-position: center;
         }
@@ -19,13 +18,13 @@
 </head>
 <body style="
     {% if weather.condition == 'Rain' %}
-        background-image: url('{{ url_for('static', filename='static/pexels-ryan-millier-1693965-3228675.jpg') }}');
+        background-image: url('{{ url_for('static', filename='pexels-ryan-millier-1693965-3228675.jpg') }}');
     {% elif weather.condition == 'Clear' %}
-        background-image: url('{{ url_for('static', filename='static/pexels-brett-sayles-912364.jpg') }}');
+        background-image: url('{{ url_for('static', filename='pexels-brett-sayles-912364.jpg') }}');
     {% elif weather.condition == 'Fog' %}
-        background-image: url('{{ url_for('static', filename='static/pexels-eberhardgross-1287083.jpg') }}');
+        background-image: url('{{ url_for('static', filename='pexels-eberhardgross-1287083.jpg') }}');
     {% else %}
-        background-image: url('{{ url_for('static', filename='static/pexels-solyartphotos-14825208.jpg') }}');
+        background-image: url('{{ url_for('static', filename='pexels-solyartphotos-14825208.jpg') }}');
     {% endif %}
 ">
     <div class="weather-container">
