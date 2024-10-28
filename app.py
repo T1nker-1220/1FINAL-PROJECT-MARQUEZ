@@ -40,6 +40,7 @@ def get_weather(city):
 
         # Extract important weather details from the API response
         weather = {
+            'city': city,
             'temp': data.get('main', {}).get('temp', 'No temperature data available'),
             'humidity': data.get('main', {}).get('humidity', 'No humidity data available'),
             'description': data.get('weather', [{}])[0].get('description', 'No weather description available'),
