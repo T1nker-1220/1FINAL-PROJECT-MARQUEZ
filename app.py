@@ -1,5 +1,6 @@
 import json
 import os
+import logging
 from flask import Flask, render_template, request
 import requests
 from dotenv import load_dotenv
@@ -7,15 +8,11 @@ from dotenv import load_dotenv
 # Load environment variables from .env file
 load_dotenv()
 
-# Print the API key to verify it is loaded correctly
-print(f"API Key: {os.getenv('API_KEY')}")
-
 # Initialize the Flask application
 app = Flask(__name__, template_folder='templates')
 
 # Get the OpenWeatherMap API key from environment variables
 api_key = os.getenv('API_KEY')
-print(f"API Key: {api_key}")  # Debugging statement
 
 # Check if the API key is loaded correctly
 if not api_key:
@@ -28,7 +25,6 @@ def home():
     if request.method == 'POST':
         # Get city name from the form input
         city = request.form['city']
-        print(f"City received: {city}")  # Debugging statement
         # Fetch weather data for the city
         weather_data = get_weather(city)
 
@@ -44,17 +40,13 @@ def get_weather(city):
         'appid': api_key,
         'units': 'metric'
     }
-    complete_url = f"{base_url}?q={params['q']}&appid={params['appid']}&units={params['units']}"
-    print(f"Request URL: {complete_url}")  # Debugging statement
+    complete_url = f"{base_url}?{requests.compat.urlencode(params)}"
 
-    # Send a GET request to the API
-    response = requests.get(complete_url)
-    print(f"Response Status Code: {response.status_code}")  # Debugging statement
-
-    # If the response status is OK (200), process the data
-    if response.status_code == 200:
+    try:
+        # Send a GET request to the API
+        response = requests.get(complete_url)
+        response.raise_for_status()
         data = response.json()
-        print(f"Response Data: {json.dumps(data, indent=4)}")  # Debugging statement
 
         # Extract important weather details from the API response
         weather = {
@@ -66,10 +58,11 @@ def get_weather(city):
         }
 
         return weather
-    else:
-        # Return an empty dictionary if the API request fails
+    except requests.exceptions.RequestException as e:
+        logging.error(f"Request failed: {e}")
         return {}
 
 # Run the Flask app in debug mode
 if __name__ == '__main__':
+    logging.basicConfig(level=logging.DEBUG)
     app.run(debug=True)
