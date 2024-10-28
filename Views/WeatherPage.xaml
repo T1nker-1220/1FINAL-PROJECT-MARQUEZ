@@ -1,0 +1,14 @@
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:WeatherApp.Views"
+             x:Class="WeatherApp.Views.WeatherPage">
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="Current Weather" FontSize="24" HorizontalOptions="Center" Margin="0,20,0,10" />
+            <Label Text="{Binding WeatherCondition}" FontSize="18" HorizontalOptions="Center" Margin="0,0,0,10" />
+            <Label Text="{Binding Temperature}" FontSize="18" HorizontalOptions="Center" Margin="0,0,0,10" />
+            <Label Text="{Binding Humidity}" FontSize="18" HorizontalOptions="Center" Margin="0,0,0,10" />
+            <Image Source="{Binding BackgroundImage}" Aspect="AspectFill" />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
