@@ -1,20 +1,12 @@
 import json
-import os
 from flask import Flask, render_template, request
 import requests
-from dotenv import load_dotenv
-
-# Load environment variables from .env file
-load_dotenv()
 
 # Initialize the Flask application
 app = Flask(__name__, template_folder='templates')
 
-# Get the OpenWeatherMap API key from environment variables
-api_key = os.getenv('API_KEY')
-
-# List to store the cities
-cities = []
+# Your OpenWeatherMap API key
+api_key = "50109a24ba32ed4b775a064f1fb11237"
 
 # Define the home route (the main page)
 @app.route('/', methods=['GET', 'POST'])
@@ -25,11 +17,9 @@ def home():
         city = request.form['city']
         # Fetch weather data for the city
         weather_data = get_weather(city)
-        # Add the city to the list
-        cities.append(city)
 
-    # Render the HTML template with weather data and cities
-    return render_template('index.html', weather=weather_data, cities=cities)
+    # Render the HTML template with weather data
+    return render_template('index.html', weather=weather_data)
 
 # Function to fetch weather data from the OpenWeatherMap API
 def get_weather(city):
@@ -45,21 +35,18 @@ def get_weather(city):
 
         # Extract important weather details from the API response
         weather = {
-            'city': city,
             'temp': data.get('main', {}).get('temp', 'No temperature data available'),
             'humidity': data.get('main', {}).get('humidity', 'No humidity data available'),
             'description': data.get('weather', [{}])[0].get('description', 'No weather description available'),
-            'condition': data.get('weather', [{}])[0].get('main', 'No weather condition available')
         }
 
         # Print the JSON response for debugging (optional)
         print(json.dumps(data, indent=4))
-
         return weather
     else:
         # Return an empty dictionary if the API request fails
         return {}
-        
+
 # Run the Flask app in debug mode
 if __name__ == '__main__':
     app.run(debug=True)
