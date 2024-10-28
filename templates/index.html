@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
     <style>
         body {
-            background-image: url('{{ url_for('static', filename='images/static/images/pexels-solyartphotos-14825208.jpg') }}');
+            background-image: url('{{ url_for('static', filename='images/pexels-solyartphotos-14825208.jpg') }}');
             background-size: cover;
             background-position: center;
         }
@@ -45,7 +45,7 @@
         <!-- Main Heading for Weather Info -->
         <h1>Weather Info</h1>
         <!-- Weather Icon -->
-        <img src="{{ url_for('static', filename='R.png') }}" alt="Weather Icon" class="weather-icon">
+        <img src="{{ url_for('static', filename='images/R.png') }}" alt="Weather Icon" class="weather-icon">
         <!-- Input Field for City Name and Submit Button -->
         <form method="POST" action="/">
             <input type="text" name="city" placeholder="Enter City" required class="city-input">

@@ -1,3 +1,47 @@
+/* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-image: url('/images/pexels-solyartphotos-14825208.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    font-size: 18px;
+    overflow: hidden;
+}
+
+/* Weather Container */
+.weather-container {
+    background-color: rgba(0, 0, 0, 0.7); /* Dark transparent background */
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+    -webkit-backdrop-filter: blur(15px); /* Stronger blur effect for Safari */
+    backdrop-filter: blur(15px); /* Stronger blur effect */
+    max-width: 450px;
+    text-align: center;
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+/* Weather Info Heading */
+.weather-container h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #8be9fd; /* Light blue for the heading */
+    animation: pulse 2s infinite;
+}
+
 /* Weather Info Paragraphs */
 .weather-info p {
     margin: 10px 0;
@@ -55,6 +99,14 @@
     color: #74b9ff; /* Light blue for the message */
 }
 
+/* Footer */
+.footer {
+    font-size: 0.9rem;
+    margin-top: 20px;
+    color: rgba(255, 255, 255, 0.7);
+    animation: fadeIn 2s ease-in-out;
+}
+
 /* Animations */
 @keyframes fadeIn {
     0% {
@@ -66,6 +118,7 @@
         transform: translateY(0);
     }
 }
+
 @keyframes bounceIn {
     0% {
         transform: scale(0.95);
@@ -76,6 +129,7 @@
         opacity: 1;
     }
 }
+
 @keyframes float {
     0% {
         transform: translateY(0);
@@ -87,6 +141,7 @@
         transform: translateY(0);
     }
 }
+
 @keyframes pulse {
     0% {
         text-shadow: 0 0 10px #8be9fd, 0 0 20px #34e89e, 0 0 30px #0f3443;
