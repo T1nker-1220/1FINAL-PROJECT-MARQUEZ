@@ -10,16 +10,13 @@
     <div class="weather-container">
         <!-- Main Heading for Weather Info -->
         <h1>Weather Info</h1>
-
         <!-- Weather Icon -->
         <img src="{{ url_for('static', filename='R.png') }}" alt="Weather Icon" class="weather-icon">
-
         <!-- Input Field for City Name and Submit Button -->
         <form method="POST" action="/">
             <input type="text" name="city" placeholder="Enter City" required class="city-input">
             <button type="submit" class="submit-button">Get Weather</button>
         </form>
-
         <!-- Weather Information Section -->
         <div class="weather-info">
             {% if weather and weather.temp is not none %}
@@ -31,7 +28,6 @@
                 <p class="message">Please enter the city name to get weather update.</p>
             {% endif %}
         </div>
-
         <!-- Footer Section -->
         <div class="footer">
             Powered by OpenWeatherMap
