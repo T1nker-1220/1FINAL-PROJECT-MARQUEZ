@@ -7,6 +7,9 @@ from dotenv import load_dotenv
 # Load environment variables from .env file
 load_dotenv()
 
+# Print the API key to verify it is loaded correctly
+print(f"API Key: {os.getenv('API_KEY')}")
+
 # Initialize the Flask application
 app = Flask(__name__, template_folder='templates')
 

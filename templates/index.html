@@ -7,34 +7,34 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
     <style>
         body {
-            background-image: url('{{ url_for('static', filename='images/pexels-solyartphotos-14825208.jpg') }}');
+            background-image: url('{{ url_for('static', filename='images/default.jpg') }}');
             background-size: cover;
             background-position: center;
         }
         {% if weather %}
             {% if weather.condition == 'Rain' %}
                 body {
-                    background-image: url('{{ url_for('static', filename='images/rainy.png') }}');
+                    background-image: url('{{ url_for('static', filename='images/rainy.jpg') }}');
                 }
             {% elif weather.condition == 'Clear' %}
                 body {
-                    background-image: url('{{ url_for('static', filename='images/sunny.png') }}');
+                    background-image: url('{{ url_for('static', filename='images/sunny.jpg') }}');
                 }
             {% elif weather.condition == 'Fog' %}
                 body {
-                    background-image: url('{{ url_for('static', filename='images/foggy.png') }}');
+                    background-image: url('{{ url_for('static', filename='images/foggy.jpg') }}');
                 }
             {% elif weather.condition == 'Clouds' %}
                 body {
-                    background-image: url('{{ url_for('static', filename='images/cloudy.png') }}');
+                    background-image: url('{{ url_for('static', filename='images/cloudy.jpg') }}');
                 }
             {% elif weather.condition == 'Storm' %}
                 body {
-                    background-image: url('{{ url_for('static', filename='images/storm.png') }}');
+                    background-image: url('{{ url_for('static', filename='images/storm.jpg') }}');
                 }
             {% elif weather.condition == 'Overcast' %}
                 body {
-                    background-image: url('{{ url_for('static', filename='images/overcast.png') }}');
+                    background-image: url('{{ url_for('static', filename='images/overcast clouds.jpg') }}');
                 }
             {% endif %}
         {% endif %}
